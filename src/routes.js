@@ -42,7 +42,7 @@ import Billing from "layouts/billing";
 import VirtualReality from "layouts/virtual-reality";
 import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
+import SignIn from "layouts/authentication/sign-in/signin";
 import SignUp from "layouts/authentication/sign-up";
 
 // Soft UI Dashboard React icons
@@ -115,7 +115,7 @@ const routes = [
     type: "collapse",
     name: "Sign In",
     key: "sign-in",
-    route: "/authentication/sign-in",
+    route: "/authentication/signin",
     icon: <Document size="12px" />,
     component: <SignIn />,
     noCollapse: true,

@@ -30,7 +30,7 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
 
-function CoverLayout({ color, header, title, description, image, top, children }) {
+function CoverLayout({ color, header, title, description, image, top, children, backgroundImage }) {
   return (
     <PageLayout background="white">
       <DefaultNavbar
@@ -43,15 +43,37 @@ function CoverLayout({ color, header, title, description, image, top, children }
       />
       <Grid
         container
+        spacing={2}
+        rowSpacing={15}
         justifyContent="center"
         sx={{
           minHeight: "75vh",
           margin: 0,
         }}
       >
-        <Grid item xs={11} sm={8} md={5} xl={3}>
+        <Grid item xs={12} md={4}>
+          <SoftBox
+            height="100%"
+            display={{ xs: "none", md: "block" }}
+            position="relative"
+            right={{ md: "-12rem" }}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            <SoftBox
+              height="100%"
+              sx={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </SoftBox>
+        </Grid>
+        <Grid item xs={11} sm={8} md={5} xl={4}>
           <SoftBox mt={top}>
-            <SoftBox pt={3} px={3}>
+            <SoftBox pt={2} px={3}>
               {!header ? (
                 <>
                   <SoftBox mb={1}>
@@ -70,30 +92,6 @@ function CoverLayout({ color, header, title, description, image, top, children }
             <SoftBox p={3}>{children}</SoftBox>
           </SoftBox>
         </Grid>
-        <Grid item xs={12} md={5}>
-          <SoftBox
-            height="100%"
-            display={{ xs: "none", md: "block" }}
-            position="relative"
-            right={{ md: "-12rem", xl: "-16rem" }}
-            mr={-16}
-            sx={{
-              transform: "skewX(-10deg)",
-              overflow: "hidden",
-              borderBottomLeftRadius: ({ borders: { borderRadius } }) => borderRadius.lg,
-            }}
-          >
-            <SoftBox
-              ml={-8}
-              height="100%"
-              sx={{
-                backgroundImage: `url(${image})`,
-                backgroundSize: "cover",
-                transform: "skewX(10deg)",
-              }}
-            />
-          </SoftBox>
-        </Grid>
       </Grid>
       <Footer />
     </PageLayout>
@@ -107,6 +105,7 @@ CoverLayout.defaultProps = {
   description: "",
   color: "info",
   top: 20,
+  backgroundImage: "",
 };
 
 // Typechecking props for the CoverLayout
@@ -127,6 +126,7 @@ CoverLayout.propTypes = {
   image: PropTypes.string.isRequired,
   top: PropTypes.number,
   children: PropTypes.node.isRequired,
+  backgroundImage: PropTypes.string,
 };
 
 export default CoverLayout;
