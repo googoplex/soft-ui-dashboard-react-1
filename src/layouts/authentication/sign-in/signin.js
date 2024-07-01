@@ -14,7 +14,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import sample from "assets/images/curved-images/bg.png";
+import sample from "assets/images/bg.png";
+import { List, ListItemText, Paper } from "@mui/material";
+import { Person, Work } from "@mui/icons-material";
 
 const theme = createTheme();
 
@@ -29,77 +31,125 @@ function LoginForm() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
                 height: 700,
                 width: 500,
                 backgroundImage: `url(${sample})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              }}
-            />
-            <img src={logo} />
-          </Grid>
-          <Grid item>
-            <Box
-              sx={{
-                mt: 8,
-                display: "flex",
-                flexDirection: "column",
-
-                height: 500,
-                width: 600,
-                mx: 4,
-                p: 4,
+                padding: 5,
+                paddingLeft: 8,
+                gap: 4
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <LockOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                Welcome back!
-              </Typography>
-              <Box component="form" noValidate sx={{ mt: 1 }}>
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                />
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-                <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="Remember me"
-                />
-                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                  Sign In
-                </Button>
-                <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Link href="#" variant="body2">
-                      {"Don't have an account? Sign Up"}
-                    </Link>
-                  </Grid>
-                </Grid>
+              <img src={logo} alt="logo" style={{ width: "40%" }} />
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                <Typography variant="h6" style={{ color: "white" }}>
+                  What you get
+                </Typography>
+                <List sx={{color: 'white', listStyle: 'disc', pl: 2, fontWeight: '300'}}>
+                  <li>Free Direct Primary Care</li>
+                  <li>Savings on Medications</li>
+                  <li>Annual Membership Buy-Downs</li>
+                  <li>Free Pharmaceuticals Coming Soon</li>
+                  <li>Full Access Gifting After First $10,000 Spent</li>
+                  <li>ER, Surgical, & Cancer Access</li>
+                  <li>Access to Responsive & Caring Support</li>
+                </List>
               </Box>
+            </Box>
+          </Grid>
+          <Grid item>
+          <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                height: 700,
+                width: 500,
+                padding: 5,
+                paddingLeft: 8,
+                gap: 4
+              }}
+            >
+
+              <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: 1}}>
+                <Typography variant="body2" style={{ color: "gray" }}>
+                  Already have an account?
+                </Typography>
+                <Link href="#" variant="body2" style={{ color: "blue" }}>
+                  Sign in
+                </Link>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4,
+                }}
+              >
+                <Typography component="h1" variant="h5">
+                  Join Us!
+                </Typography>
+
+                {/* To begin this journey, tell us which option is best describes what you are looking for?*/}
+                <Typography variant="body2" style={{ color: "gray" }}>
+                  To begin this journey, tell us which option is best describes what you are looking for?
+                </Typography>
+
+
+                {/* 3 Paper cards, Member, Provider and Admin with each description and icon */}
+                <Box  sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2}}>
+                    <Avatar>
+                      <Person/>
+                    </Avatar>
+                    <Box sx={{display: "flex", flexDirection: "column"}}>
+                      <Typography variant="h6">
+                        Member
+                      </Typography>
+                      <Typography variant="body2">
+                        I am looking to join as a member
+                      </Typography>
+                    </Box>
+                  </Paper>
+
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2 }}>
+                    <Avatar>
+                      <LockOutlinedIcon />
+                    </Avatar>
+                    <Box sx={{display: "flex", flexDirection: "column"}}>
+                      <Typography variant="h6">
+                        Provider
+                      </Typography>
+                      <Typography variant="body2">
+                        I am looking to join as a provider
+                      </Typography>
+                    </Box>
+                  </Paper>
+                  
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2 }}>
+                    <Avatar >
+                      <Work />
+                    </Avatar>
+                    <Box sx={{display: "flex", flexDirection: "column"}}>
+                      <Typography variant="h6">
+                        Admin
+                      </Typography>
+                      <Typography variant="body2">
+                        I am looking to join as an admin
+                      </Typography>
+                    </Box>
+                  </Paper>
+
+                </Box>
+
+                {/* If your membership is paid through your employer, please check your work email for login info, then download the mobile app to enjoy your benefits. */}
+                <Typography variant="caption" style={{ color: "gray" }}>
+                  If your membership is paid through your employer, please check your work email for login info, then download the mobile app to enjoy your benefits.
+                </Typography>
+
+              </Box>
+
             </Box>
           </Grid>
         </Grid>
