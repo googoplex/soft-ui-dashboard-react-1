@@ -15,12 +15,22 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import sample from "assets/images/bg.png";
-import { List, ListItemText, Paper } from "@mui/material";
+import { createStyles, List, ListItemText, Paper } from "@mui/material";
 import { Person, Work } from "@mui/icons-material";
+import { useTheme } from "@emotion/react";
 
-const theme = createTheme();
+const theme = createTheme({
+  root: {
+    '&:hover' :{
+      backgroundColor: "blue"
+    }
+  }
+});
+
 
 function LoginForm() {
+  const th = useTheme(theme);
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xl">
@@ -99,7 +109,11 @@ function LoginForm() {
 
                 {/* 3 Paper cards, Member, Provider and Admin with each description and icon */}
                 <Box  sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2}}>
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2, border: "1px solid transparent", '&:hover': {
+                    backgroundColor: "#F5F9FF",
+                    border: "1px solid #1565D8",
+                    transition: ""
+                  }}}>
                     <Avatar>
                       <Person/>
                     </Avatar>
@@ -113,7 +127,11 @@ function LoginForm() {
                     </Box>
                   </Paper>
 
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2 }}>
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2, border: "1px solid transparent", '&:hover': {
+                    backgroundColor: "#F5F9FF",
+                    border: "1px solid #1565D8",
+                    transition: ""
+                  } }}>
                     <Avatar>
                       <LockOutlinedIcon />
                     </Avatar>
@@ -127,7 +145,11 @@ function LoginForm() {
                     </Box>
                   </Paper>
                   
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2 }}>
+                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, border: "1px solid transparent", alignItems: "center", padding: 2, '&:hover': {
+                    backgroundColor: "#F5F9FF",
+                    border: "1px solid #1565D8",
+                    transition: ""
+                  } }}>
                     <Avatar >
                       <Work />
                     </Avatar>
