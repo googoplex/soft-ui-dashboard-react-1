@@ -1,32 +1,28 @@
-// src/LoginForm.js
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import logo from "../../../assets/images/logo.png";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import sample from "assets/images/bg.png";
-import { createStyles, List, ListItemText, Paper } from "@mui/material";
-import { Person, Work } from "@mui/icons-material";
+import { List, Paper } from "@mui/material";
 import { useTheme } from "@emotion/react";
+
+import icons from "../../../assets/images/curved-images/icons.png";
+import icon2 from "../../../assets/images/curved-images/icon2.png";
+import icon3 from "../../../assets/images/curved-images/icon3.png";
+import logo from "../../../assets/images/logo.png";
 
 const theme = createTheme({
   root: {
-    '&:hover' :{
-      backgroundColor: "blue"
-    }
-  }
+    "&:hover": {
+      backgroundColor: "blue",
+    },
+  },
 });
-
 
 function LoginForm() {
   const th = useTheme(theme);
@@ -48,15 +44,15 @@ function LoginForm() {
                 backgroundPosition: "center",
                 padding: 5,
                 paddingLeft: 8,
-                gap: 4
+                gap: 4,
               }}
             >
               <img src={logo} alt="logo" style={{ width: "40%" }} />
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 <Typography variant="h6" style={{ color: "white" }}>
-                  What you get
+                  What you Get
                 </Typography>
-                <List sx={{color: 'white', listStyle: 'disc', pl: 2, fontWeight: '300'}}>
+                <List sx={{ color: "white", listStyle: "disc", pl: 2, fontWeight: "300" }}>
                   <li>Free Direct Primary Care</li>
                   <li>Savings on Medications</li>
                   <li>Annual Membership Buy-Downs</li>
@@ -69,20 +65,20 @@ function LoginForm() {
             </Box>
           </Grid>
           <Grid item>
-          <Box
+            <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 height: 700,
-                width: 500,
+                width: 700,
                 padding: 5,
-                paddingLeft: 8,
-                gap: 4
+                paddingLeft: 20,
+                paddingRight: 20,
+                gap: 3,
               }}
             >
-
-              <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: 1}}>
-                <Typography variant="body2" style={{ color: "gray" }}>
+              <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: 1 }}>
+                <Typography variant="body2" sx={{ color: "#8692A6", fontSize: "14px" }}>
                   Already have an account?
                 </Typography>
                 <Link href="#" variant="body2" style={{ color: "blue" }}>
@@ -97,81 +93,95 @@ function LoginForm() {
                   gap: 4,
                 }}
               >
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h5" sx={{ fontWeight: "bold" }}>
                   Join Us!
                 </Typography>
 
-                {/* To begin this journey, tell us which option is best describes what you are looking for?*/}
-                <Typography variant="body2" style={{ color: "gray" }}>
-                  To begin this journey, tell us which option is best describes what you are looking for?
+                <Typography variant="body2" style={{ color: "#8692A6" }}>
+                  To begin this journey, tell us which option is best describes what you are looking
+                  for?
                 </Typography>
 
-
-                {/* 3 Paper cards, Member, Provider and Admin with each description and icon */}
-                <Box  sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2, border: "1px solid transparent", '&:hover': {
-                    backgroundColor: "#F5F9FF",
-                    border: "1px solid #1565D8",
-                    transition: ""
-                  }}}>
-                    <Avatar>
-                      <Person/>
-                    </Avatar>
-                    <Box sx={{display: "flex", flexDirection: "column"}}>
-                      <Typography variant="h6">
-                        Member
-                      </Typography>
-                      <Typography variant="body2">
-                        I am looking to join as a member
-                      </Typography>
-                    </Box>
-                  </Paper>
-
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, alignItems: "center", padding: 2, border: "1px solid transparent", '&:hover': {
-                    backgroundColor: "#F5F9FF",
-                    border: "1px solid #1565D8",
-                    transition: ""
-                  } }}>
-                    <Avatar>
-                      <LockOutlinedIcon />
-                    </Avatar>
-                    <Box sx={{display: "flex", flexDirection: "column"}}>
-                      <Typography variant="h6">
-                        Provider
-                      </Typography>
-                      <Typography variant="body2">
-                        I am looking to join as a provider
-                      </Typography>
-                    </Box>
-                  </Paper>
-                  
-                  <Paper elevation={4} sx={{ display: "flex",  gap: 2, border: "1px solid transparent", alignItems: "center", padding: 2, '&:hover': {
-                    backgroundColor: "#F5F9FF",
-                    border: "1px solid #1565D8",
-                    transition: ""
-                  } }}>
-                    <Avatar >
-                      <Work />
-                    </Avatar>
-                    <Box sx={{display: "flex", flexDirection: "column"}}>
-                      <Typography variant="h6">
-                        Admin
-                      </Typography>
-                      <Typography variant="body2">
-                        I am looking to join as an admin
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                  <Paper
+                    elevation={4}
+                    sx={{
+                      display: "flex",
+                      gap: 2,
+                      alignItems: "center",
+                      padding: 3,
+                      boxShadow: "5px 8px 28px -4px rgba(0,0,0,0.06)",
+                      "&:hover": {
+                        backgroundColor: "#F5F9FF",
+                        border: "1px solid #1565D8",
+                        transition: "",
+                      },
+                    }}
+                  >
+                    <img src={icons} alt="Member Icon" />
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <Typography variant="h6">Member</Typography>
+                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                        Individual and Medical Representatives
                       </Typography>
                     </Box>
                   </Paper>
 
+                  <Paper
+                    elevation={4}
+                    sx={{
+                      display: "flex",
+                      gap: 2,
+                      alignItems: "center",
+                      padding: 3,
+                      boxShadow: "5px 8px 28px -4px rgba(0,0,0,0.06)",
+                      border: "1px solid transparent",
+                      "&:hover": {
+                        backgroundColor: "#F5F9FF",
+                        border: "1px solid #1565D8",
+                        transition: "",
+                      },
+                    }}
+                  >
+                    <img src={icon2} alt="Provider Icon" />
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <Typography variant="h6">Provider</Typography>
+                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                        Physician and Medical Representatives
+                      </Typography>
+                    </Box>
+                  </Paper>
+
+                  <Paper
+                    elevation={4}
+                    sx={{
+                      display: "flex",
+                      gap: 2,
+                      alignItems: "center",
+                      padding: 3,
+                      boxShadow: "5px 8px 28px -4px rgba(0,0,0,0.06)",
+                      "&:hover": {
+                        backgroundColor: "#F5F9FF",
+                        border: "1px solid #1565D8",
+                        transition: "",
+                      },
+                    }}
+                  >
+                    <img src={icon3} alt="Admin Icon" />
+                    <Box sx={{ display: "flex", flexDirection: "column" }}>
+                      <Typography variant="h6">Admin</Typography>
+                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                        Own or belong to a company
+                      </Typography>
+                    </Box>
+                  </Paper>
                 </Box>
 
-                {/* If your membership is paid through your employer, please check your work email for login info, then download the mobile app to enjoy your benefits. */}
-                <Typography variant="caption" style={{ color: "gray" }}>
-                  If your membership is paid through your employer, please check your work email for login info, then download the mobile app to enjoy your benefits.
+                <Typography variant="caption" sx={{ color: "#8692A6", fontSize: "10px" }}>
+                  If your membership is paid through your employer, please check your work email for
+                  login info, then download the mobile app to enjoy your benefits.
                 </Typography>
-
               </Box>
-
             </Box>
           </Grid>
         </Grid>
