@@ -97,7 +97,7 @@ function LoginForm() {
                   Join Us!
                 </Typography>
 
-                <Typography variant="body2" style={{ color: "#8692A6" }}>
+                <Typography sx={{ color: "#8692A6", fontSize: "13px" }}>
                   To begin this journey, tell us which option is best describes what you are looking
                   for?
                 </Typography>
@@ -121,7 +121,7 @@ function LoginForm() {
                     <img src={icons} alt="Member Icon" />
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                       <Typography variant="h6">Member</Typography>
-                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                      <Typography sx={{ color: "#8692A6", fontSize: "13px" }}>
                         Individual and Medical Representatives
                       </Typography>
                     </Box>
@@ -146,7 +146,7 @@ function LoginForm() {
                     <img src={icon2} alt="Provider Icon" />
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                       <Typography variant="h6">Provider</Typography>
-                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                      <Typography sx={{ color: "#8692A6", fontSize: "13px" }}>
                         Physician and Medical Representatives
                       </Typography>
                     </Box>
@@ -170,7 +170,7 @@ function LoginForm() {
                     <img src={icon3} alt="Admin Icon" />
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                       <Typography variant="h6">Admin</Typography>
-                      <Typography variant="body2" sx={{ color: "#8692A6" }}>
+                      <Typography sx={{ color: "#8692A6", fontSize: "13px" }}>
                         Own or belong to a company
                       </Typography>
                     </Box>

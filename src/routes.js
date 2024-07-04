@@ -43,8 +43,8 @@ import VirtualReality from "layouts/virtual-reality";
 import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in/signin";
-import SignUp from "layouts/authentication/sign-up";
-
+import SignUp from "layouts/authentication/sign-up/sign-up";
+import Personal from "layouts/authentication/personal/personal";
 // Soft UI Dashboard React icons
 import Shop from "examples/Icons/Shop";
 import Office from "examples/Icons/Office";
@@ -54,6 +54,7 @@ import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
 import Cube from "examples/Icons/Cube";
+import Confirmation from "layouts/authentication/confirmation/confirm";
 
 const routes = [
   {
@@ -127,6 +128,24 @@ const routes = [
     route: "/authentication/sign-up",
     icon: <SpaceShip size="12px" />,
     component: <SignUp />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Personal",
+    key: "personal-bg",
+    route: "/authentication/personal-bg",
+    icon: <SpaceShip size="12px" />,
+    component: <Personal />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "Confirmation",
+    key: "confirm",
+    route: "/authentication/confirmation",
+    icon: <SpaceShip size="12px" />,
+    component: <Confirmation />,
     noCollapse: true,
   },
 ];
